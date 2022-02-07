@@ -17,7 +17,7 @@ const gameBoard = document.querySelector('#board')
 const userCol = document.querySelector('.flex-col1')
 
 connectBtn.addEventListener('click', () => {
-    socket = new WebSocket('ws://localhost:8080')
+    socket = new WebSocket('ws://localhost:5500')
     socket.onopen = function(event) {}
     newGameBtn.addEventListener('click', () => {
         const payLoad = {
