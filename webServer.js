@@ -25,7 +25,7 @@ socketServer.on('request', request => {
     sendAvailableGames()
 })
 
-httpServer.listen(5500, () => { console.log('server listening on port 5500') })
+httpServer.listen(8080, () => { console.log('server listening on port 8080') })
 
 function connectionOpened() {
     connection.send('connection with server opend')
