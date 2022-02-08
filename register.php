@@ -14,7 +14,7 @@ $sql = "INSERT INTO `users` (`usename`, `password`) VALUES ('0', '$txtName', '$t
 
 // insert in database 
 $rs = mysqli_query($con, $sql);
-
+echo $rs;
 if($rs)
 {
 	echo "Contact Records Inserted";
