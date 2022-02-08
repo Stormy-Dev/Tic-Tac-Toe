@@ -1,4 +1,27 @@
 <h1>Tic-Tac-Toe</h1>
+<div style="display:flex;">
+
+<div class="sidebar" style="flex-direction: column;">
+  
+  <div><label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required></div>
+  <div><label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required></div>
+  <button id="register-btn" type="button">register</button>
+  <button id="login-btn" type="button">login</button>
+  <div >Spielerliste</div>
+  <ul id="spielerliste">
+    <li>test item</li>
+    <li>test item</li>
+    <li>test item</li>
+    <li>test item</li>
+    <li>test item</li>
+    <li>test item</li>
+  </ul>
+  
+
+</div>
+
 <div class="game-board">
     <div id="1" class="box" onclick="myFunction(this.id)"></div>
     <div id="2" class="box" onclick="myFunction(this.id)"></div>
@@ -10,6 +33,9 @@
     <div id="8" class="box" onclick="myFunction(this.id)"></div>
     <div id="9" class="box" onclick="myFunction(this.id)"></div>
   </div>
+
+</div>
+
 
 <script>
 var counter = 0;
