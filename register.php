@@ -10,7 +10,7 @@ $txtPassword = $_POST['password'];
 
 
 // database insert SQL code
-$sql = "INSERT INTO `users` (`usename`, `password`) VALUES ('0', '$txtName', '$txtPassword')";
+$sql = "INSERT INTO `users` (`username`, `password`) VALUES ('0', '$txtName', '$txtPassword')";
 
 // insert in database 
 $rs = mysqli_query($con, $sql);
