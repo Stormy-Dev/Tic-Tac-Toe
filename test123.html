@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Contact Form - PHP/MySQL Demo Code</title>
+<title>Tic Tac Toe Login/Register</title>
 </head>
 
 <body>
 <fieldset>
-<legend>Contact Form</legend>
-<form name="frmContact" method="post" action="register.php">
+<legend>Tic Tac Toe Register/Login</legend>
+<form name="register" method="post" action="register.php">
 <p>
 <label for="Name">Name </label>
 <input type="text" name="username" id="username">
@@ -21,8 +21,11 @@
 
 <p>&nbsp;</p>
 <p>
-<input type="submit" name="Submit" id="Submit" value="Submit">
+<input type="submit" name="Register" id="Register" value="Register">
 </p>
+</form>
+<form name="login" method="post" action="login.php">
+    <input type="submit" name="Login" id="Login" value="Login">
 </form>
 </fieldset>
 </body>

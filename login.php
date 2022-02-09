@@ -2,14 +2,14 @@
         $host = "localhost";  
         $user = "root";  
         $password = '';  
-        $db_name = "login";  
-          
+        $db_name = "users";  
+    
         $con = mysqli_connect($host, $user, $password, $db_name);  
         if(mysqli_connect_errno()) {  
             die("Failed to connect with MySQL: ". mysqli_connect_error());  
         }  
-        $username = $_POST['user'];  
-        $password = $_POST['pass'];  
+        $username = $_POST['username'];  
+        $password = $_POST['password'];  
       
         //to prevent from mysqli injection  
         $username = stripcslashes($username);  

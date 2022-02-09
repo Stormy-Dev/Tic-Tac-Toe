@@ -10,14 +10,14 @@ $txtPassword = $_POST['password'];
 
 
 // database insert SQL code
-$sql = "INSERT INTO `users` (`username`, `password`) VALUES ('0', '$txtName', '$txtPassword')";
+$sql = "INSERT INTO `users` (`username`, `password`) VALUES ('$txtName', '$txtPassword')";
 
 // insert in database 
 $rs = mysqli_query($con, $sql);
 echo $rs;
 if($rs)
 {
-	echo "Contact Records Inserted";
+	echo "Account Created";
 }
 
 ?>
