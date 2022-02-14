@@ -3,6 +3,7 @@
         $user = "root";  
         $password = '';  
         $db_name = "users";  
+        
     
         $con = mysqli_connect($host, $user, $password, $db_name);  
         if(mysqli_connect_errno()) {  
@@ -22,7 +23,9 @@
         $count = mysqli_num_rows($result); 
                       
         if($count > 0){  
-            echo "<h1><center> Login successful </center></h1>";  
+            echo "<h1><center> Login successfull </center></h1>";  
+            header("Location: tictactoe.html");
+            die();
         }  
         else{  
             echo "<h1><center> Login failed. Invalid username or password.</center></h1>";  
