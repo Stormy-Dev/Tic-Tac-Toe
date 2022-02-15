@@ -23,7 +23,7 @@
                       
         if($count > 0){  
             echo "<h1><center> Login successful </center></h1>";  
-            header("Location: client.html");
+            header("Location: client.php");
 	        die();
         }  
         else{  
