@@ -23,6 +23,8 @@
                       
         if($count > 0){  
             echo "<h1><center> Login successful </center></h1>";  
+            header("Location: client.html");
+	        die();
         }  
         else{  
             echo "<h1><center> Login failed. Invalid username or password.</center></h1>";  

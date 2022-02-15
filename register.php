@@ -18,6 +18,8 @@ echo $rs;
 if($rs)
 {
 	echo "Account Created";
+	header("Location: login1.html");
+	die();
 }
 
 ?>
