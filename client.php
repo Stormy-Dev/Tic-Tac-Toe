@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php session_start();
+$user=$_SESSION['user'];
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +17,7 @@
         <!-- </div> -->
 
         <div style="display:flex;flex-direction: column;">
-        <span><?= $_GET['username'] ?></span>
+        <span><?= $user ?></span>
         <a href="login1.html">logout</a>
         </div>
 

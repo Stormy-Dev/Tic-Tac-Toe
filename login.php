@@ -1,4 +1,6 @@
 <?php      
+        session_start();
+
         $host = "localhost";  
         $user = "root";  
         $password = '';  
@@ -10,7 +12,7 @@
         }  
         $username = $_POST['username'];  
         $password = $_POST['password'];  
-      
+        $_SESSION['user']=$username;
         //to prevent from mysqli injection  
         $username = stripcslashes($username);  
         $password = stripcslashes($password);  
