@@ -5,8 +5,8 @@ const clients = {}
 const CROSS_SYMBOL = 'x'
 const CIRCLE_SYMBOL = 'o'
 const WIN_STATES = Array([0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6])
-//session_start();
-//$user=$_SESSION['user'];
+session_start();
+$user=$_SESSION['user'];
 
 const httpServer = http.createServer((request, response) => {
     // 
@@ -46,7 +46,7 @@ function messageHandler(message) {
                 'wins': 0,
                 'lost': 0
             }
-            const gameId = 69
+            const gameId = $user
             const board = [
                 '', '', '',
                 '', '', '',
