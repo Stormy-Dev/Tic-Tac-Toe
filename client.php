@@ -28,7 +28,7 @@ $user=$_SESSION['user'];
                     <!-- user details goes here -->
                 </div>
                 <div class="flex-col2">
-                   <!-- <button class="connectBtn" id="connectBtn">Connect</button>-->
+                 <button class="connectBtn" id="connectBtn">Connect</button>
                     <button class="newGame" id="newGame">New Game</button>
                     <label for="joinGame" class="joinLabel">Players</label>
                     <ul class="currGames" id="currGames">
