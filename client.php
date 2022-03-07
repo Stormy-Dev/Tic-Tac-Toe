@@ -18,7 +18,7 @@ $user=$_SESSION['user'];
 
         <div style="display:flex;flex-direction: column;">
         <span><?= $user ?></span>
-        <a href="login1.html">logout</a>
+        <a href="homepage.html">logout</a>
         </div>
 
         <div class="container" id="container">
