@@ -5,9 +5,7 @@ const clients = {}
 const CROSS_SYMBOL = 'x'
 const CIRCLE_SYMBOL = 'o'
 const WIN_STATES = Array([0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6])
-session_start();
-$user=$_SESSION['user'];
-
+var clientId;
 const httpServer = http.createServer((request, response) => {
     // 
 })
@@ -21,7 +19,7 @@ socketServer.on('request', request => {
     connection.on('close', () => {})
     connection.on('message', messageHandler)
 
-    const clientId = 69
+    const clientId = Math.round(Math.random() * 100) + Math.round(Math.random() * 100) + Math.round(Math.random() * 100)
     clients[clientId] = { 'clientId': clientId, 'connection': connection }
     connection.send(JSON.stringify({ 'method': 'connect', 'clientId': clients[clientId].clientId }))
     sendAvailableGames()
@@ -46,7 +44,8 @@ function messageHandler(message) {
                 'wins': 0,
                 'lost': 0
             }
-            const gameId = $user
+           
+            const gameId = Math.round(Math.random() * 100) + Math.round(Math.random() * 100) + Math.round(Math.random() * 100)
             const board = [
                 '', '', '',
                 '', '', '',

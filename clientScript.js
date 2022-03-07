@@ -15,11 +15,12 @@ const joinGame = document.querySelector('button[type="submit"]')
 const cells = document.querySelectorAll('#cell')
 const gameBoard = document.querySelector('#board')
 const userCol = document.querySelector('.flex-col1')
-
 connectBtn.addEventListener('click', () => {
     socket = new WebSocket('ws://localhost:8080')
     socket.onopen = function(event) {}
     newGameBtn.addEventListener('click', () => {
+        newGameBtn.disabled = true
+        joinGame.disabled = true
         const payLoad = {
             'method': 'create',
             'clientId': clientId
@@ -100,6 +101,7 @@ connectBtn.addEventListener('click', () => {
             case 'gameEnds':
                 console.log(`Winner is ${data.winner}`)
                 window.alert(`Winner is ${data.winner}`)
+                document.location.reload()
                 break;
             case 'draw':
                 alert('Its a draw')
