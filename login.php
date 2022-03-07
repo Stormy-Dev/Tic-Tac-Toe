@@ -1,9 +1,10 @@
 <?php      
+        session_start();
+
         $host = "localhost";  
         $user = "root";  
         $password = '';  
         $db_name = "users";  
-        
     
         $con = mysqli_connect($host, $user, $password, $db_name);  
         if(mysqli_connect_errno()) {  
@@ -11,7 +12,7 @@
         }  
         $username = $_POST['username'];  
         $password = $_POST['password'];  
-      
+        $_SESSION['user']=$username;
         //to prevent from mysqli injection  
         $username = stripcslashes($username);  
         $password = stripcslashes($password);  
@@ -23,9 +24,9 @@
         $count = mysqli_num_rows($result); 
                       
         if($count > 0){  
-            echo "<h1><center> Login successfull </center></h1>";  
-            header("Location: tictactoe.html");
-            die();
+            echo "<h1><center> Login successful </center></h1>";  
+            header("Location: client.php");
+	        die();
         }  
         else{  
             echo "<h1><center> Login failed. Invalid username or password.</center></h1>";  

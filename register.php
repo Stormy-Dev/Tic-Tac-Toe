@@ -5,12 +5,12 @@
 $con = mysqli_connect('localhost', 'root', '','users');
 
 // get the post records
-$txtName1 = $_POST['username'];
-$txtPassword1 = $_POST['password'];
+$txtName = $_POST['username'];
+$txtPassword = $_POST['password'];
 
 
 // database insert SQL code
-$sql = "INSERT INTO `users` (`username`, `password`) VALUES ('$txtName1', '$txtPassword1')";
+$sql = "INSERT INTO `users` (`username`, `password`) VALUES ('$txtName', '$txtPassword')";
 
 // insert in database 
 $rs = mysqli_query($con, $sql);
