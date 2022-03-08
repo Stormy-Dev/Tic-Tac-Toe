@@ -35,8 +35,8 @@ connectBtn.addEventListener('click', () => {
         switch (data.method) {
             case 'connect':
                 clientId = data.clientId
-                userCol.innerHTML = `UserId: ${clientId}`
-                userCol.classList.add('joinLabel')
+               // userCol.innerHTML = `UserId: ${clientId}`
+                //userCol.classList.add('joinLabel')
                 break
             case 'create':
                 // inform you have successfully created the game and been added as player1
