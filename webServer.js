@@ -1,6 +1,7 @@
 const http = require('http')
 const WebSocket = require('websocket').server
 const games = {}
+const activeUsers ={}
 const clients = {}
 const CROSS_SYMBOL = 'x'
 const CIRCLE_SYMBOL = 'o'
@@ -43,9 +44,9 @@ function messageHandler(message) {
                 'isTurn': true,
                 'wins': 0,
                 'lost': 0
-            }
-           
-            const gameId = Math.round(Math.random() * 100) + Math.round(Math.random() * 100) + Math.round(Math.random() * 100)
+            }  
+            const gameId = Math.round(Math.random() * 100) + Math.round(Math.random() * 100) + Math.round(Math.random() * 100);
+            const username =msg.username.trim()
             const board = [
                 '', '', '',
                 '', '', '',
@@ -56,9 +57,13 @@ function messageHandler(message) {
                 'players': Array(player),
                 'board': board
             }
+            activeUsers[gameId] ={
+                'user':username
+            }
             const payLoad = {
                 'method': 'create',
-                'game': games[gameId]
+                'game': games[gameId],
+                'user':activeUsers[gameId]
             }
             const conn = clients[msg.clientId].connection
             conn.send(JSON.stringify(payLoad))

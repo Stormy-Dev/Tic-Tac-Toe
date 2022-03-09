@@ -7,7 +7,8 @@ let board;
 let game
 
 
-
+var div = document.getElementById("dom-target");
+var user = div.textContent;
 const connectBtn = document.getElementById('connectBtn')
 const newGameBtn = document.getElementById('newGame')
 const currGames = document.getElementById('currGames')
@@ -23,7 +24,8 @@ connectBtn.addEventListener('click', () => {
         joinGame.disabled = true
         const payLoad = {
             'method': 'create',
-            'clientId': clientId
+            'clientId': clientId,
+            'username': user
         }
 
         socket.send(JSON.stringify(payLoad))
@@ -35,8 +37,8 @@ connectBtn.addEventListener('click', () => {
         switch (data.method) {
             case 'connect':
                 clientId = data.clientId
-               // userCol.innerHTML = `UserId: ${clientId}`
-                //userCol.classList.add('joinLabel')
+                userCol.innerHTML = `UserId: ${user}`
+                userCol.classList.add('joinLabel')
                 break
             case 'create':
                 // inform you have successfully created the game and been added as player1
@@ -53,11 +55,11 @@ connectBtn.addEventListener('click', () => {
                 while (currGames.firstChild) {
                     currGames.removeChild(currGames.lastChild)
                 }
-                const games = data.games
-                games.forEach((game) => {
+                const users = data.activeUsers
+                activeUsers.forEach((user) => {
                     const li = document.createElement('li')
                     li.addEventListener('click', selectGame)
-                    li.innerText = game
+                    li.innerText = user
                     currGames.appendChild(li)
                 })
                 break

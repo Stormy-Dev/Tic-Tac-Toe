@@ -19,6 +19,10 @@ $user=$_SESSION['user'];
         <div style="display:flex;flex-direction: column;">
         <span><?= $user ?></span>
         <a href="homepage.html">logout</a>
+        </html><div id="dom-target" style="display: none;">
+    <?php
+        echo htmlspecialchars($user); 
+    ?>
         </div>
 
         <div class="container" id="container">
@@ -58,4 +62,5 @@ $user=$_SESSION['user'];
     <script src="clientScript.js" defer></script>
 </body>
 
-</html>
+
+</div>
