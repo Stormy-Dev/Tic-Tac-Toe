@@ -12,9 +12,9 @@ $user=$_SESSION['user'];
 
 <body>
     <div class="topDiv">
-        <!-- <div class="headerDiv"> -->
+        
         <h1>Online Tic Tac Toe</h1>
-        <!-- </div> -->
+        
 
         <div style="display:flex;flex-direction: column;">
         <span><?= $user ?></span>
@@ -29,7 +29,7 @@ $user=$_SESSION['user'];
 
             <div class="sidebar" id="sidebar">
                 <div class="flex-col1">
-                    <!-- user details goes here -->
+              
                 </div>
                 <div class="flex-col2">
                  <button class="connectBtn" id="connectBtn">Connect</button>
