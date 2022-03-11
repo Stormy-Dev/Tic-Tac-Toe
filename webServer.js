@@ -37,7 +37,6 @@ function messageHandler(message) {
     let player = {}
     switch (msg.method) {
         case 'create':
-            // create logic
             player = {
                 'clientId': msg.clientId,
                 'symbol': CROSS_SYMBOL,
@@ -67,7 +66,6 @@ function messageHandler(message) {
             sendAvailableGames()
             break;
         case 'join':
-            // join game logic
             player = {
                 'clientId': msg.clientId,
                 'symbol': CIRCLE_SYMBOL,
@@ -114,7 +112,6 @@ function messageHandler(message) {
                 })
                 break
             }
-            // logic for draw goes herer
             else {
                 const isDraw = WIN_STATES.every(state => {
                     return state.some(index => {
@@ -156,7 +153,6 @@ function makeMove(game) {
 }
 
 function sendAvailableGames() {
- //username="test"
     const allGames = []
     const allUsers = []
     for (const k of Object.keys(games)) {
@@ -164,7 +160,6 @@ function sendAvailableGames() {
             allGames.push(games[k].gameId)
             allUsers.push(games[k].user)
         }
-        console.log("1"+allGames)
     }
     const payLoad = { 'method': 'gamesAvail', 'games': allGames,'users':allUsers}
     for (const c of Object.keys(clients))

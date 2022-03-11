@@ -19,6 +19,7 @@ body {
     width: 60vw;
     height: 70vh;
     background-color: #252525;
+    color: antiquewhite;
     margin: auto;
     display: grid;
     grid-template-columns: var(--sidebar-width) 80%;
@@ -34,20 +35,19 @@ body {
     display: flex;
     flex-flow: column;
     justify-content: center;
+    color: antiquewhite;
 }
 
 .mainbar {
     background-color: #252525;
-    /* position: relative; */
+    color: antiquewhite;
 }
 
 .board {
     position: relative;
     margin: auto;
+    color: antiquewhite;
     margin-top: 10%;
-    /* top: 20%; */
-    /* left: 5%; */
-    /* display: grid; */
     grid-template-columns: repeat(3, auto);
     justify-content: center;
     align-content: center;
@@ -55,6 +55,7 @@ body {
 }
 
 .cell {
+    color: antiquewhite;
     width: 100px;
     height: 100px;
     border: 1px solid #ffffff;
@@ -97,8 +98,15 @@ h1 {
     color: antiquewhite;
     text-align: center;
 }
+span{
+    color: antiquewhite;
+}
+a{
+    color: rgb(21, 114, 221);
+}
 
 h1::before {
+    color: antiquewhite;
     content: "";
     background-color: #252525;
     display: inline-block;
@@ -109,6 +117,7 @@ h1::before {
 }
 
 h1::after {
+    color: antiquewhite;
     content: "";
     background-color: #910a8a;
     display: inline-block;
@@ -144,15 +153,14 @@ h1::after {
 
 .sidebar ul {
     list-style: none;
+    color: antiquewhite;
 }
 
 .sidebar ul li {
-    /* display: block; */
     width: 95%;
     margin: 0 auto;
     padding: 5px;
     height: 30px;
-    /* color: white; */
     font-size: 1rem;
     color: antiquewhite;
     background-color: #252525;
@@ -166,7 +174,6 @@ button[type='submit'] {
     display: block;
     width: 95%;
     margin: 0 auto;
-    /* margin-top: 0x; */
     height: 30px;
     color: white;
     font-size: 1.3rem;
@@ -200,9 +207,7 @@ button[type='submit'] {
     height: 94px;
     width: 90px;
     background-color: #ffffff;
-    /* transform: rotate(45deg); */
     border-radius: 50%;
-    /* display: inline-block; */
 }
 
 .board.circle .cell:not(.x):not(.circle):hover::after,
@@ -211,13 +216,9 @@ button[type='submit'] {
     position: absolute;
     height: 84px;
     width: 80px;
-    /* background-color: #94b8b8; */
     background-color: #252525;
     border-radius: 50%;
 }
-
-
-/* .board.circle .cell:not(.x):not(.circle):hover::after, */
 
 .board.circle .cell:not(.x):not(.circle):hover::before,
 .board.x .cell:not(.x):not(.circle):hover::after,
