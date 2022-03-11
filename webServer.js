@@ -56,14 +56,11 @@ function messageHandler(message) {
                 'gameId': gameId,
                 'players': Array(player),
                 'board': board
-            }
-            activeUsers[gameId] ={
-                'user':username
+                ,'user':username
             }
             const payLoad = {
                 'method': 'create',
-                'game': games[gameId],
-                'user':activeUsers[gameId]
+                'game': games[gameId]
             }
             const conn = clients[msg.clientId].connection
             conn.send(JSON.stringify(payLoad))
@@ -159,14 +156,17 @@ function makeMove(game) {
 }
 
 function sendAvailableGames() {
-
+ //username="test"
     const allGames = []
+    const allUsers = []
     for (const k of Object.keys(games)) {
         if (games[k].players.length < 2) {
             allGames.push(games[k].gameId)
+            allUsers.push(games[k].user)
         }
+        console.log("1"+allGames)
     }
-    const payLoad = { 'method': 'gamesAvail', 'games': allGames }
+    const payLoad = { 'method': 'gamesAvail', 'games': allGames,'users':allUsers}
     for (const c of Object.keys(clients))
 
     { clients[c].connection.send(JSON.stringify(payLoad)) }

@@ -41,8 +41,7 @@ connectBtn.addEventListener('click', () => {
                 userCol.classList.add('joinLabel')
                 break
             case 'create':
-                // inform you have successfully created the game and been added as player1
-                gameId = data.game.gameId
+                gameId=user
                 yourSymbol = data.game.players[0].symbol
                 console.log(`game id is ${gameId} and your symbol is ${yourSymbol}`)
                 cells.forEach(cell => {
@@ -53,15 +52,21 @@ connectBtn.addEventListener('click', () => {
 
             case 'gamesAvail':
                 while (currGames.firstChild) {
-                    currGames.removeChild(currGames.lastChild)
+                    currGames.removeChild(currGames.lastChild)                 
                 }
-                const users = data.activeUsers
-                activeUsers.forEach((user) => {
-                    const li = document.createElement('li')
-                    li.addEventListener('click', selectGame)
-                    li.innerText = user
-                    currGames.appendChild(li)
-                })
+                const users = data.users
+                const games= data.games
+                
+for (let index = 0; index < games.length; index++) {
+    const li = document.createElement('li')
+    const i = document.createElement('i')
+    li.addEventListener('click', selectGame)
+    li.innerText =games[index]
+    i.innerText = users[index]
+    console.log(users[index])
+    currGames.appendChild(i)
+    currGames.appendChild(li) 
+}
                 break
             case 'join':
                 gameId = data.game.gameId
