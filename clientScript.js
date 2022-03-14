@@ -18,7 +18,6 @@ const gameBoard = document.querySelector('#board')
 const userCol = document.querySelector('.flex-col1')
 connectBtn.addEventListener('click', () => {
     socket = new WebSocket('ws://localhost:8080')
-    socket.onopen = function(event) {}
     newGameBtn.addEventListener('click', () => {
         newGameBtn.disabled = true
         joinGame.disabled = true
